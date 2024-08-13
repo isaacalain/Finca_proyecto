@@ -1,28 +1,8 @@
 
 <?php require_once "./parte_superior.php" ?>
-
-<!--
-
-<div class="titulo">
+<div class="intro-text">
     <p>Disfrutar de unas vacaciones en Puerto Viejo es una excelente decisión. ¿Por qué no complementar tu experiencia con un alojamiento de calidad?</p>
-
 </div>
-
-<body>
-    <div class="main-img">
-        <img src="./images/playa.jpg" alt="">
-    </div>
-
-    <div class="main-accordion-container"></div>
-    <div class="mid-info">
-        <p class="mid-info-title">Bungalows</p>
-        <p class="mid-info-desc">Elige la habitación ideal para tus vacaciones y disfruta de una experiencia fuera de lo común.</p>
-    </div>
-    <div class="card-list">
-
-    </div>
-</body>
--->
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -30,6 +10,11 @@
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
 img {vertical-align: middle;}
+.carousel-img {
+    width: 100%; 
+    height: 500px; /* Ajusta esta altura según lo que necesites */
+    object-fit: cover; 
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -195,14 +180,56 @@ body {
   border-radius: 8px;
   overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
 }
-
 .card-img {
   width: 100%; /* La imagen ocupará todo el ancho del contenedor */
   height: auto; /* Mantiene la proporción de la imagen */
   display: block; /* Evita espacios debajo de la imagen */
   object-fit: cover; /* Cubre completamente el contenedor sin distorsionar */
+  border-bottom: 1px solid #ddd; /* Añade una línea debajo de la imagen para separación */
 }
 
+
+.card-content {
+  display: none; /* Oculta el contenido por defecto */
+  padding: 10px; /* Añade un poco de padding para mejor visualización */
+  background-color: #f9f9f9; /* Color de fondo del contenido desplegado */
+}
+
+/* Opcional: Puedes añadir estilos cuando el card esté activo */
+.card.active .card-content {
+  display: block; /* Muestra el contenido cuando el card tiene la clase 'active' */
+}
+
+
+.intro-text {
+    text-align: center;
+    margin: 20px auto;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 24px;
+    color: #292929;
+    max-width: 1000px; 
+}
+
+.mid-info-title {
+    font-size: 30pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-top: 30px;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 20px; /* Añade espacio entre el título y la descripción */
+}
+
+.mid-info-desc {
+    font-size: 26px;
+    font-weight: 700;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
 
 
 </style>
@@ -211,28 +238,30 @@ body {
 
 <div class="slideshow-container">
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="./images/playa.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="./images/playa.jpg" class="carousel-img">
+       
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="./images/atardecer.jpg" class="carousel-img">
+        
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="./images/Puerto-Viejo-Costa-Rica.jpg" class="carousel-img">
+        
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
 </div>
 
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="./images/atardecer.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
-</div>
 
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="./images/Puerto-Viejo-Costa-Rica.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>
 <br>
 
 <div style="text-align:center">
@@ -245,35 +274,41 @@ body {
         <p class="mid-info-desc">Elige la habitación ideal para tus vacaciones y disfruta de una experiencia fuera de lo común.</p>
     </div>
 
-
-
- <div class="row"  >
- 
-  <div class="column" >
-  <div class="card">
-    <img src="./images/cuarto_individual.jpg" class="card-img">
+    
 </div>
 
+
+<div class="row">
+  <div class="column">
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Habitación individual</h3>
+      <img src="./images/cuarto-1.jpg" class="card-img">
+      <div class="card-content">
+        <p>"Disfruta de una escapada tranquila en nuestra habitación individual en un acogedor bungalow. Perfecta para un huésped, esta habitación ofrece un ambiente sereno con una cama cómoda, decoración elegante y todas las comodidades modernas que necesitas para una estancia relajante. Ideal para aquellos que buscan privacidad y confort en un entorno natural."</p>
+      </div>
+    </div>
   </div>
 
   <div class="column">
-    <div class="card" >
-      <h3>Card 2</h3>
-      <p>Some text</p>
-      <p>Some text</p>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Habitación estandar</h3>
+      <img src="./images/cuarto-2.jpg" class="card-img">
+      <div class="card-content">
+        <p>"Vive una experiencia inolvidable en nuestra habitación doble en un encantador bungalow. Diseñada para parejas, esta habitación combina confort y estilo, ofreciendo una cama king-size, un ambiente cálido y acogedor, y todas las comodidades necesarias para una estancia relajante. Perfecta para una escapada romántica o para disfrutar de un tiempo de calidad juntos en un entorno natural."</p>
+      </div>
     </div>
   </div>
   
   <div class="column">
-    <div class="card" >
-      <h3>Card 3</h3>
-      <p>Some text</p>
-      <p>Some text</p>
+    <div class="card" onclick="toggleCard(this)">
+      <h3>Habitación Familiar</h3>
+      <img src="./images/cuarto-3.jpg" class="card-img">
+      <div class="card-content">
+        <p>"Perfecta para familias, nuestra habitación familiar en el bungalow ofrece espacio y confort para todos. Equipada con camas cómodas y un área de estar, proporciona el ambiente ideal para disfrutar de una estancia relajante y compartir momentos especiales en un entorno natural."</p>
+      </div>
     </div>
   </div>
-
 </div>
-
 
 
 
@@ -306,7 +341,13 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+// Función para alternar el despliegue de contenido en las tarjetas
+function toggleCard(card) {
+  card.classList.toggle('active');
+}
 </script>
+
 
 </body>
 

@@ -15,8 +15,8 @@
     </div>
     <div class="menu-container">
         <div class="menu-derecha">
-            <a class="enlaces-menu-derecha" href="https://google.com">Cotizar</a>
-            <a class="enlaces-menu-derecha" href="https://google.com">Contactanos</a>
+            <a class="enlaces-menu-derecha" href="http://localhost/Finca_proyecto/Finca_proyecto/">Cotizar</a>
+            <a class="enlaces-menu-derecha" href="http://localhost/Finca_proyecto/Finca_proyecto/">Contactanos</a>
 
         </div>
        <!--
