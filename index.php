@@ -140,7 +140,7 @@ body {
   }
 }
 
-/* Style the counter cards */
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
@@ -162,7 +162,7 @@ body {
   display: flex; 
   justify-content: center; /* Centra las columnas horizontalmente */
   flex-wrap: wrap; /* Permite que las columnas se envuelvan si hay muchas */
-  gap: 20px; /* Añade un espacio entre las columnas */
+  gap: 50px; /* Añade un espacio entre las columnas */
   padding: 20px; /* Espacio alrededor de las columnas */
 }
 
@@ -230,6 +230,159 @@ body {
     font-family: "Roboto", sans-serif;
     text-align: center;
 }
+@media screen and (max-width: 1025px) {
+    .slideshow-container {
+        max-width: 100%; /* Asegura que el contenedor del slideshow ocupe todo el ancho disponible */
+    }
+
+    .carousel-img {
+        height: auto; /* Ajusta la altura de las imágenes del carrusel automáticamente */
+    }
+
+    .column {
+        width: 100%; /* Las columnas ocuparán todo el ancho disponible */
+        margin-bottom: 20px; /* Añade un poco de espacio debajo de cada columna */
+    }
+
+    .card {
+        max-width: 100%; /* Asegura que las tarjetas ocupen todo el ancho disponible */
+    }
+
+    .intro-text, .mid-info-title, .mid-info-desc {
+        font-size: 18px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+        padding: 10px; /* Ajusta el padding para que no se vean muy grandes en pantallas pequeñas */
+        text-align: center; /* Centra el texto */
+    }
+
+    .mid-info-title {
+        font-size: 24px; /* Reduce un poco el tamaño del título */
+    }
+
+    .mid-info-desc {
+        font-size: 20px; /* Reduce un poco el tamaño de la descripción */
+        width: 100%; /* Asegura que el texto ocupe todo el ancho disponible */
+    }
+}
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu-izquierda img.logo {
+    height: 150px; /* Tamaño del logo en pantallas grandes */
+    width: auto; /* Mantiene la proporción */
+    padding-left: 300px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu-derecha {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Estilos para el ícono de hamburger */
+.hamburger-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilos responsivos */
+/* Estilos responsivos */
+@media screen and (max-width: 1025px) {
+    .menu-container {
+        flex-direction: row; /* Alinea los elementos en una fila */
+        padding: 0 20px; /* Agrega espacio a los lados */
+    }
+
+    .menu-izquierda {
+        flex: 1;
+        padding-left: 0; /* Elimina el padding a la izquierda */
+    }
+  .menu-izquierda img.logo {
+    
+    padding-left: 30px;
+  }
+
+    .menu-derecha {
+        display: none; /* Oculta los enlaces en pantallas más pequeñas */
+    }
+
+    .hamburger-icon {
+        display: block; /* Muestra el icono en pantallas más pequeñas */
+        padding-right: 30px;
+    }
+}
+footer {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre columnas */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px; /* Evita que las columnas sean demasiado pequeñas */
+    margin: 10px;
+}
+
+.footer-column h3 {
+    margin-top: 0;
+}
+
+.footer-column a {
+    color: #2d6a4f; /* Verde */
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea el texto al final */
+}
+
+.footer-right h3, .footer-right p {
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0; /* Espacio vertical entre columnas */
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+}
+
+
 
 
 </style>
@@ -346,6 +499,16 @@ function showSlides(n) {
 function toggleCard(card) {
   card.classList.toggle('active');
 }
+function toggleMenu() {
+    const menuDerecha = document.querySelector('.menu-derecha');
+    if (menuDerecha.style.display === 'flex') {
+        menuDerecha.style.display = 'none';
+    } else {
+        menuDerecha.style.display = 'flex';
+    }
+}
+
+
 </script>
 
 
